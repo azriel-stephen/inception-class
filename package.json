@@ -1,0 +1,30 @@
+{
+  "name": "inception",
+  "version": "1.0.0",
+  "description": "Episode 2 of Namaste React",
+  "source": "index.html",
+  "scripts": {
+    "test": "jest",
+    "start": "npx parcel",
+    "build": "npx parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/azriel-stephen/inception-class.git"
+  },
+  "author": "Azriel Stephen Christian Barla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azriel-stephen/inception-class/issues"
+  },
+  "homepage": "https://github.com/azriel-stephen/inception-class#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "browserslist": "> 0.36% or last 2 versions"
+}
