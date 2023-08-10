@@ -1,13 +1,5 @@
-// const heading = React.createElement(
-//     'h1',
-//     {id:'heading', className:'heading', children: 'this is children passed as props'},
-//     'This is rendered using ReactDOM'
-// )
-// console.log('heading: ',heading, typeof heading)
-// const root = ReactDOM.createRoot(document.getElementById('root'))
-// console.log('root: ',root, typeof root)
-// root.render(heading)
-
+import React from "react";
+import ReactDOM from "react-dom/client";
 const parent = React.createElement(
   "div",
   { id: "parent", className: "heading" },
