@@ -1,18 +1,14 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
-const parent = React.createElement(
-  "div",
-  { id: "parent", className: "heading" },
-  [
-    React.createElement("div", { id: "child1" }, [
-      React.createElement("h1", {}, "heading1"),
-      React.createElement("h2", {}, "heading2"),
-    ]),
-    React.createElement("div", { id: "child1" }, [
-      React.createElement("h1", {}, "heading1"),
-      React.createElement("h2", {}, "heading2"),
-    ]),
-  ]
+const jsxHeading = (
+  <h1 className="head" tabIndex="5">
+    Hello world from JSX
+  </h1>
 );
 
-ReactDOM.createRoot(document.getElementById("root")).render(parent);
+// JSX => Babel transpiles the code to React.createElement => ReactElement-JS object => HTML element(render).
+
+console.log(jsxHeading);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(jsxHeading);
