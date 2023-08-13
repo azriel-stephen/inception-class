@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import logo from "./img/BiteHub-logos-black.png";
+import data from "./data";
 const Header = () => (
   <div className="header">
     <div className="logo">
@@ -16,40 +17,32 @@ const Header = () => (
   </div>
 );
 
-const RestaurantCard = () => (
-  <div className="res-card">
-    <div className="res-img">
-      <img
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/aqsnrylokzpn45qhg1pb"
-        alt="placeholder"
-      />
+const RestaurantCard = (props) => {
+  const { resData } = props;
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
+    resData.info;
+  const { deliveryTime } = resData.info.sla;
+
+  const imgUrl = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`;
+  return (
+    <div className="res-card">
+      <img className="res-img" src={imgUrl} />
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating} Stars</h4>
+      <h4>{costForTwo}</h4>
+      <h4>{deliveryTime} mins</h4>
     </div>
-    <div className="res-description">
-      <h3>Meghna Foods</h3>
-      <h4>Biriyani, North Indian, Asian</h4>
-      <h4>4.4 Stars</h4>
-      <h4>38 mins</h4>
-    </div>
-  </div>
-);
+  );
+};
 
 const Body = () => (
   <div className="body">
     <div className="search">Search</div>
     <div className="res-container">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+      {data.map((restaurant) => (
+        <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+      ))}
     </div>
   </div>
 );
@@ -59,6 +52,6 @@ const AppLayout = () => (
     <Body />
   </div>
 );
-
+console.log(data[1].info);
 const root = createRoot(document.getElementById("root"));
 root.render(<AppLayout />);

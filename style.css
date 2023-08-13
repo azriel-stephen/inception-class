@@ -17,8 +17,12 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
-  border: 1px solid black;
+  outline: 2px solid rgb(125, 119, 80);
+
   height: 200px;
+  background-color: rgb(230, 228, 218);
+  border-bottom-right-radius: 25px;
+  border-end-start-radius: 5px;
   /* align-content: center; */
 }
 .navbar {
@@ -39,32 +43,40 @@ body {
   list-style: none;
 }
 .body {
-  border: 1px solid black;
+  /* outline: 1px solid black; */
 }
-.res-card {
-  width: 200px;
-  /* margin: 10px auto; */
-  padding: 10px;
-}
-.res-img > img {
+.res-img {
   width: 100%;
   /* padding: 5px; */
-  border-radius: 5px;
+  border-radius: 15px;
+  /* outline: black 1px solid; */
+}
+.res-card {
+  background-color: rgb(230, 228, 218);
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border-start-end-radius: 20px;
+  border-end-end-radius: 20px;
+  /* outline: black 1px solid; */
 }
 .res-card:hover {
-  outline: 2px solid rgb(231, 172, 172);
-  border-radius: 5px;
+  background-color: rgb(210, 201, 149);
   cursor: pointer;
 }
 .res-description {
   padding: 5px;
+  /* outline: 1px solid black; */
 }
 
 .search {
   margin: 10px;
 }
 .res-container {
+  /* outline: black 1px solid; */
   display: flex;
+  padding: 10px 50px;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 10px 50px;
 }
