@@ -1,38 +1,64 @@
-import ReactDOM from "react-dom/client";
-import { createElement } from "react";
-
-const nestedHeader = createElement("div", { className: "title" }, [
-  createElement("h1", {}, "Nested Header h1"),
-  createElement("h2", {}, "Nested Header h2"),
-  createElement("h3", {}, "Nested Header h3"),
-]);
-
-const nestedJSX = (
-  <div className="title">
-    <h1>Nested Header h1</h1>
-    <h2>Nested Header h2</h2>
-    <h3>Nested Header h3</h3>
+import { createRoot } from "react-dom/client";
+import logo from "./img/BiteHub-logos-black.png";
+const Header = () => (
+  <div className="header">
+    <div className="logo">
+      <img src={logo} alt="logo-image" />
+    </div>
+    <div className="navbar">
+      <ul className="nav-items">
+        <li className="nav-item">Home</li>
+        <li className="nav-item">About</li>
+        <li className="nav-item">Contact Us</li>
+        <li className="nav-item">Cart</li>
+      </ul>
+    </div>
   </div>
 );
 
-const Heading = () => <h1>Heading of something</h1>;
-
-const NestedComponent = () => {
-  return (
-    <div className="title">
-      <Heading />
-      {Heading()}
-      <Heading></Heading>
-      <h1>Nested Header h1</h1>
-      <h2>Nested Header h2</h2>
-      <h3>Nested Header h3</h3>
+const RestaurantCard = () => (
+  <div className="res-card">
+    <div className="res-img">
+      <img
+        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/aqsnrylokzpn45qhg1pb"
+        alt="placeholder"
+      />
     </div>
-  );
-};
-console.log(nestedHeader, typeof nestedHeader);
-console.log(nestedJSX, typeof nestedJSX);
-console.log(NestedComponent, typeof NestedComponent);
+    <div className="res-description">
+      <h3>Meghna Foods</h3>
+      <h4>Biriyani, North Indian, Asian</h4>
+      <h4>4.4 Stars</h4>
+      <h4>38 mins</h4>
+    </div>
+  </div>
+);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<NestedComponent />);
-// root.render(nestedJSX);
+const Body = () => (
+  <div className="body">
+    <div className="search">Search</div>
+    <div className="res-container">
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+    </div>
+  </div>
+);
+const AppLayout = () => (
+  <div className="app-layout">
+    <Header />
+    <Body />
+  </div>
+);
+
+const root = createRoot(document.getElementById("root"));
+root.render(<AppLayout />);
